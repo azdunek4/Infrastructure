@@ -5,7 +5,7 @@ jenkins:
       - id: "panda"
         password: "panda"
   authorizationStrategy:
-      projectMatrix: # globalMatrix bardzo podobny
+      projectMatrix:
         permissions:
           - "Overall/Administer:panda"
   numExecutors: 0
@@ -82,7 +82,3 @@ unclassified:
       triggers:
         skipScmCause: false
         skipUpstreamCause: false
-#secrets:
-#  user_ssh_key:
-    #file: ~/.ssh/id_rsa # newkeys.txt
-    #basicSSHUserPrivateKey: "IuWQJs5y/YgC8hpFVRLLNbwrQNIfUSlXCIRISjrqjzo"
