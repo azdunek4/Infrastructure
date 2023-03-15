@@ -5,10 +5,11 @@ jenkins:
       - id: "panda"
         password: "panda"
   authorizationStrategy:
-      projectMatrix: # globalMatrix bardzo podobny
+      projectMatrix:
         permissions:
           - "Overall/Administer:panda"
   numExecutors: 0
+<<<<<<< HEAD
     nodes:
   - permanent:
       labelString: "agent"
@@ -22,6 +23,8 @@ jenkins:
       remoteFS: "/home/jenkins/agent"
       retentionStrategy: "always"
       
+=======
+>>>>>>> 02917f5361e7a623c66e3168c48f7ed8c9f14f80
 credentials:
   system:
     domainCredentials:
@@ -87,8 +90,11 @@ tool:
               id: "4.7.0.2747"
 
 unclassified:
+<<<<<<< HEAD
   location:
     url: "http://192.168.44.44:8880/"
+=======
+>>>>>>> 02917f5361e7a623c66e3168c48f7ed8c9f14f80
   sonarGlobalConfiguration:
     buildWrapperEnabled: true
     installations:
@@ -96,4 +102,8 @@ unclassified:
       serverUrl: "http://192.168.44.44:9000"
       triggers:
         skipScmCause: false
+<<<<<<< HEAD
         skipUpstreamCause: false
+=======
+        skipUpstreamCause: false
+>>>>>>> 02917f5361e7a623c66e3168c48f7ed8c9f14f80
