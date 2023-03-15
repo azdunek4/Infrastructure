@@ -1,0 +1,16 @@
+FROM jenkins:2.319.3-lts-jdk11
+
+#ścieżka bezwzględna zadziała wtw gdy odpalamy zawsze 
+# w tej samej lokalizacji oraz pod tym samym OS
+WORKDIR /home/panda/Infrastructure
+
+ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
+
+ENV CASC_JENKINS_CONFIG usr/share/jenkins/ref/casc.yml
+
+# albo ADD
+COPY plugins.txt /usr/share/jenkins/ref/ 
+
+RUN jenkins-plugin-cli plugins.txt
+
+#ENTRYPOINT ["python", "app.py"]

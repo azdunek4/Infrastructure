@@ -1,0 +1,40 @@
+#unclassified:
+ # location:
+  #  adminAddress: "panda@panda.it"
+   # url: "http://panda-jenkins.com"
+
+######
+
+jenkins:
+
+  authorizationStrategy:
+      projectMatrix:
+        permissions:
+          - "Overall/Administer:authenticated"
+          # - "View/Read:authenticated"
+        
+#  authorizationStrategy:
+#    loggedInUsersCanDoAnything:
+#      allowAnonymousRead: false
+#      password: "panda" # tutaj???
+
+  numExecutors: 0 #### to konieczne
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false ## raczej sie tego nie robi, domyslnie wylaczone
+      users:
+      - id: "panda"
+        name: "panda"
+
+### poza jenkinsem
+
+tool:
+  mavenGlobalConfig:
+    globalCredentialsConfiguration:
+      configuration:
+        # providerFilter: "none"
+        typeFilter: "matrix-based security"
+
