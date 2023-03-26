@@ -18,7 +18,7 @@ services:
       retries: 30
 
   jenkins:
-    build: jenkins_controller # build: ./jenkins_controller/
+    build: ./jenkins_controller/ # build: "jenkins_controller"
     container_name: jenkins
     depends_on:
       artifactory:
@@ -28,11 +28,14 @@ services:
       - "50000:50000"
     volumes:
       - ./jenkins_controller/casc.yml:/usr/share/jenkins/ref/casc.yml
-      - ./jenkins_controller/jobs:/usr/share/jenkins/ref/jobs
+      #- ./jenkins_controller/jobs:/usr/share/jenkins/ref/jobs/
+      - ./jenkins_controller/jobs/app_of_apps.groovy:/usr/share/jenkins/ref/jobs/app_of_apps.groovy
+      - ./jenkins_controller/jobs/backend.groovy:/usr/share/jenkins/ref/jobs/backend.groovy
+      - ./jenkins_controller/jobs/frontend.groovy:/usr/share/jenkins/ref/jobs/frontend.groovy
     restart: always
 
   jenkins_agent:
-    build: jenkins_agent # build: ./jenkins_agent/
+    build: ./jenkins_agent/ # build: jenkins_agent
     container_name: jenkins_agent
     depends_on:
       - jenkins
