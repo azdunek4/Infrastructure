@@ -1,20 +1,16 @@
-pipelineJob('app_of_apps') {
-    parameters {
-        stringParam('backendDockerTag', '', 'Backend docker image tag')
-        stringParam('frontendDockerTag', '', 'Frontend docker image tag')
-    }
- 
+pipelineJob('backend') {
     definition {
         cpsScm {
             scm {
                 git {
                     remote {
                         credentials("")
-                        url("https://github.com/Panda-Academy-Core-2-0//App_of_apps")
+                        url("https://github.com/azdunek4/Backend.git")
                     }
-                    branches('main')
+                    branches('master') // w innych plikach jest 'main'
                     scriptPath('Jenkinsfile')
                 }
             }
         }
     }
+}
