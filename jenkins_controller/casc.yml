@@ -76,6 +76,12 @@ credentials:
                   eu5o5Xo/Q56XHRAAAADXBhbmRhQHZhZ3JhbnQBAgMEBQ==
                   -----END OPENSSH PRIVATE KEY-----
             scope: GLOBAL
+
+jobs:
+  - file: /usr/share/jenkins/ref/jobs/frontend.groovy
+  - file: /usr/share/jenkins/ref/jobs/backend.groovy
+  - file: /usr/share/jenkins/ref/jobs/apps_of_apps.groovy
+
 tool:
   sonarRunnerInstallation:
     installations:
@@ -89,6 +95,9 @@ tool:
 unclassified:
   location:
     url: "http://192.168.44.44:8880/"
+    #locale:
+      #ignoreAcceptLanguage: true
+      #systemLocale: "US:EN"
   sonarGlobalConfiguration:
     buildWrapperEnabled: true
     installations:
