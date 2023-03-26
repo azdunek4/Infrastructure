@@ -9,7 +9,8 @@ jenkins:
         permissions:
           - "Overall/Administer:panda"
   numExecutors: 0
-    nodes:
+  
+  nodes:
   - permanent:
       labelString: "agent"
       launcher:
